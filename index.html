@@ -3,47 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dicas de Contabilidade Pública - PCASP</title>
+<title>Dicas PCASP</title>
 
 <style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
   font-family:Arial, Helvetica, sans-serif;
   background:#061b35;
-  color:white;
-  overflow:hidden;
 }
 
 .app{
   max-width:430px;
   margin:auto;
   min-height:100vh;
-  background:linear-gradient(180deg,#05162d,#0c3870);
+  background:linear-gradient(180deg,#061b35,#0b376e);
+  color:white;
   position:relative;
   overflow:hidden;
 }
 
-.topo{
-  background:linear-gradient(135deg,#001f4d,#003b8f,#005eff);
-  padding:24px 18px;
+.header{
+  padding:22px 16px;
   text-align:center;
-  border-bottom-left-radius:28px;
-  border-bottom-right-radius:28px;
+  background:linear-gradient(135deg,#001f4d,#004aad,#0077ff);
+  border-bottom-left-radius:25px;
+  border-bottom-right-radius:25px;
 }
 
-.topo h1{
-  font-size:28px;
+.header h1{
+  font-size:27px;
   font-weight:900;
-  line-height:1.2;
 }
 
-.topo p{
+.header p{
   margin-top:8px;
   font-size:15px;
 }
@@ -53,62 +46,65 @@ body{
   display:inline-block;
   background:white;
   color:#003b8f;
-  padding:8px 18px;
+  padding:8px 16px;
   border-radius:30px;
   font-weight:bold;
-  font-size:15px;
+}
+
+.area{
+  height:calc(100vh - 120px);
+  overflow:hidden;
 }
 
 .slider{
   display:flex;
-  transition:0.45s ease;
+  width:100%;
+  height:100%;
+  transition:transform .4s ease;
 }
 
 .slide{
   min-width:100%;
-  padding:22px 16px 130px;
+  height:100%;
+  padding:22px 16px 120px;
+  overflow-y:auto;
 }
 
 .card{
   background:white;
   color:#111;
-  border-radius:26px;
+  border-radius:25px;
   padding:24px 20px;
-  min-height:500px;
-  box-shadow:0 10px 25px rgba(0,0,0,.28);
+  min-height:470px;
+  box-shadow:0 8px 24px rgba(0,0,0,.28);
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
 
 .tag{
-  display:inline-block;
   background:#003b8f;
   color:white;
   padding:8px 14px;
   border-radius:20px;
   font-size:15px;
   font-weight:bold;
+  display:inline-block;
+  width:max-content;
   margin-bottom:18px;
 }
 
 .card h2{
-  font-size:30px;
-  line-height:1.18;
+  font-size:29px;
   color:#001f4d;
-  margin-bottom:20px;
+  line-height:1.2;
+  margin-bottom:18px;
 }
 
-.card p{
+.card p,.card li{
   font-size:22px;
   line-height:1.4;
-  margin-bottom:14px;
-}
-
-.card li{
-  font-size:22px;
-  line-height:1.4;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 ul{
@@ -120,23 +116,24 @@ ul{
   border-left:7px solid #004aad;
   padding:16px;
   border-radius:16px;
-  margin-top:16px;
+  margin-top:14px;
   font-size:22px;
   line-height:1.4;
-  color:#111;
 }
 
 .sigla{
   background:#f2f7ff;
-  padding:16px;
+  border:2px solid #d7e7ff;
+  padding:15px;
   border-radius:18px;
-  margin-top:14px;
-  border:2px solid #d9e7ff;
+  margin-bottom:14px;
+  font-size:21px;
+  line-height:1.35;
 }
 
 .sigla strong{
   color:#003b8f;
-  font-size:24px;
+  font-size:25px;
 }
 
 .rodape{
@@ -144,19 +141,19 @@ ul{
   text-align:center;
   font-size:14px;
   color:#444;
-  line-height:1.5;
   font-weight:bold;
+  line-height:1.5;
 }
 
 .botoes{
   position:absolute;
   bottom:0;
+  left:0;
   width:100%;
-  max-width:430px;
   padding:14px;
+  background:white;
   display:flex;
   gap:10px;
-  background:white;
   border-top:1px solid #ddd;
 }
 
@@ -171,7 +168,7 @@ button{
 }
 
 .voltar{
-  background:#1b2d4a;
+  background:#1d3557;
   color:white;
 }
 
@@ -188,17 +185,15 @@ button:active{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:8px;
-  margin-top:20px;
+  margin-top:16px;
 }
 
 .sumario button{
   background:#dcecff;
   color:#003b8f;
-  padding:12px 0;
-  border-radius:12px;
+  padding:10px;
   font-size:15px;
 }
-
 </style>
 </head>
 
@@ -206,329 +201,202 @@ button:active{
 
 <div class="app">
 
-<div class="topo">
-  <h1>DICAS DE CONTABILIDADE PÚBLICA</h1>
-  <p>Objetivos do PCASP</p>
-  <div class="contador" id="contador">
-    Dica 1 de 12
+  <div class="header">
+    <h1>DICAS DE CONTABILIDADE PÚBLICA</h1>
+    <p>Objetivos do PCASP</p>
+    <div class="contador" id="contador">Dica 1 de 12</div>
   </div>
-</div>
 
-<div class="slider" id="slider">
-
-<!-- DICA 1 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 01</span>
-
-<h2>🎯 Finalidade Geral</h2>
-
-<p>O PCASP padroniza os registros contábeis do setor público brasileiro.</p>
-
-<div class="destaque">
-Melhora a transparência, o controle, a comparabilidade e a consolidação das contas públicas.
-</div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 2 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 02</span>
-
-<h2>🟣 Padronização dos Registros</h2>
-
-<ul>
-<li>Uniformizar lançamentos contábeis;</li>
-<li>Facilitar comparabilidade;</li>
-<li>Melhorar qualidade da informação.</li>
-</ul>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 3 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 03</span>
-
-<h2>📌 Natureza Patrimonial</h2>
-
-<p>Controla o patrimônio público.</p>
-
-<div class="destaque">
-Ativos, passivos e patrimônio líquido.
-</div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 4 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 04</span>
-
-<h2>📌 Natureza Orçamentária</h2>
-
-<p>Relacionada à execução do orçamento público.</p>
-
-<div class="destaque">
-Receitas e despesas orçamentárias.
-</div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 5 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 05</span>
-
-<h2>📌 Natureza de Controle</h2>
-
-<p>Registra atos potenciais e controles administrativos.</p>
-
-<div class="destaque">
-Nem tudo altera o patrimônio imediatamente, mas precisa de controle.
-</div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 6 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 06</span>
-
-<h2>🔵 DCASP</h2>
-
-<p>O PCASP permite a elaboração das DCASP.</p>
-
-<div class="sigla">
-<strong>DCASP</strong><br><br>
-Demonstrações Contábeis Aplicadas ao Setor Público
-</div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 7 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 07</span>
-
-<h2>📊 RREO e RGF</h2>
-
-<div class="sigla">
-<strong>RREO</strong><br><br>
-Relatório Resumido da Execução Orçamentária
-</div>
-
-<div class="sigla">
-<strong>RGF</strong><br><br>
-Relatório de Gestão Fiscal
-</div>
-
-<div class="destaque">
-Esses relatórios auxiliam o acompanhamento da execução orçamentária e da gestão fiscal.
-</div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 8 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 08</span>
-
-<h2>🟢 Peculiaridades dos Entes</h2>
-
-<ul>
-<li>União;</li>
-<li>Estados;</li>
-<li>Distrito Federal;</li>
-<li>Municípios.</li>
-</ul>
-
-<div class="destaque">
-Permite adaptações sem perder a padronização nacional.
-</div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 9 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 09</span>
-
-<h2>📚 Detalhamento das Contas</h2>
-
-<p>As contas podem ser detalhadas além do nível mínimo definido pela STN.</p>
-
-<div class="destaque">
-Os entes podem criar níveis adicionais.
-</div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 10 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 10</span>
-
-<h2>🏛️ Estatais e RPPS</h2>
-
-<ul>
-<li>Empresas estatais dependentes;</li>
-<li>RPPS.</li>
-</ul>
-
-<div class="sigla">
-<strong>RPPS</strong><br><br>
-Regimes Próprios de Previdência Social
-</div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 11 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 11</span>
-
-<h2>🟠 Tomada de Decisão</h2>
-
-<ul>
-<li>Melhora planejamento governamental;</li>
-<li>Auxilia gestão pública;</li>
-<li>Racionaliza custos.</li>
-</ul>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-<!-- DICA 12 -->
-<div class="slide">
-<div class="card">
-
-<span class="tag">DICA 12</span>
-
-<h2>🚨 Palavras-Chave</h2>
-
-<ul>
-<li>Padronização;</li>
-<li>Transparência;</li>
-<li>Controle Social;</li>
-<li>Consolidação Nacional;</li>
-<li>DCASP;</li>
-<li>RREO;</li>
-<li>RGF;</li>
-<li>Gestão Fiscal.</li>
-</ul>
-
-<div class="sumario" id="sumario"></div>
-
-<div class="rodape">
-Curso de Contabilidade Professor Moreira<br>
-WhatsApp (61) 98532-3574
-</div>
-
-</div>
-</div>
-
-</div>
-
-<div class="botoes">
-<button class="voltar" onclick="voltar()">⬅ Voltar</button>
-<button class="proxima" onclick="proxima()">Próxima ➡</button>
-</div>
+  <div class="area">
+    <div class="slider" id="slider">
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 01</span>
+          <h2>🎯 Finalidade Geral</h2>
+          <p>O PCASP padroniza os registros contábeis do setor público brasileiro.</p>
+          <div class="destaque">Permite maior transparência, controle, comparabilidade e consolidação das contas públicas.</div>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 02</span>
+          <h2>🟣 Padronização dos Registros</h2>
+          <ul>
+            <li>Uniformiza lançamentos contábeis;</li>
+            <li>Facilita a comparabilidade;</li>
+            <li>Garante melhor qualidade da informação.</li>
+          </ul>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 03</span>
+          <h2>📌 Natureza Patrimonial</h2>
+          <p>Controla o patrimônio público.</p>
+          <div class="destaque">Abrange ativos, passivos e patrimônio líquido.</div>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 04</span>
+          <h2>📌 Natureza Orçamentária</h2>
+          <p>Relaciona-se à execução do orçamento público.</p>
+          <div class="destaque">Envolve receitas orçamentárias e despesas orçamentárias.</div>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 05</span>
+          <h2>📌 Natureza de Controle</h2>
+          <p>Registra atos potenciais e controles administrativos.</p>
+          <div class="destaque">Nem todo registro altera o patrimônio imediatamente, mas pode exigir controle.</div>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 06</span>
+          <h2>🔵 DCASP</h2>
+          <p>O PCASP permite elaborar as DCASP.</p>
+          <div class="sigla">
+            <strong>DCASP</strong><br>
+            Demonstrações Contábeis Aplicadas ao Setor Público
+          </div>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 07</span>
+          <h2>📊 RREO e RGF</h2>
+
+          <div class="sigla">
+            ➜ <strong>RREO</strong><br>
+            Relatório Resumido da Execução Orçamentária
+          </div>
+
+          <div class="sigla">
+            ➜ <strong>RGF</strong><br>
+            Relatório de Gestão Fiscal
+          </div>
+
+          <div class="destaque">
+            Esses relatórios ajudam no acompanhamento da execução orçamentária e da gestão fiscal.
+          </div>
+
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 08</span>
+          <h2>🟢 Peculiaridades de Cada Ente</h2>
+          <ul>
+            <li>União;</li>
+            <li>Estados;</li>
+            <li>Distrito Federal;</li>
+            <li>Municípios.</li>
+          </ul>
+          <div class="destaque">Permite adaptações sem perder a padronização nacional.</div>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 09</span>
+          <h2>📚 Detalhamento das Contas</h2>
+          <p>O detalhamento parte do nível mínimo estabelecido pela STN.</p>
+          <div class="destaque">Os entes podem criar níveis adicionais para atender suas necessidades.</div>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 10</span>
+          <h2>🏛️ Estatais Dependentes e RPPS</h2>
+          <ul>
+            <li>Empresas estatais dependentes;</li>
+            <li>RPPS.</li>
+          </ul>
+          <div class="sigla">
+            <strong>RPPS</strong><br>
+            Regimes Próprios de Previdência Social
+          </div>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 11</span>
+          <h2>🟠 Tomada de Decisão</h2>
+          <ul>
+            <li>Melhora o planejamento governamental;</li>
+            <li>Auxilia a gestão pública;</li>
+            <li>Permite racionalização de custos.</li>
+          </ul>
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="card">
+          <span class="tag">DICA 12</span>
+          <h2>🚨 Resumo Final</h2>
+          <ul>
+            <li>Padronização;</li>
+            <li>Transparência;</li>
+            <li>Controle social;</li>
+            <li>Consolidação nacional;</li>
+            <li>DCASP, RREO e RGF;</li>
+            <li>Patrimonial, orçamentária e controle.</li>
+          </ul>
+
+          <div class="sumario" id="sumario"></div>
+
+          <div class="rodape">Curso de Contabilidade Professor Moreira<br>WhatsApp (61) 98532-3574</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="botoes">
+    <button class="voltar" onclick="voltar()">⬅ Voltar</button>
+    <button class="proxima" onclick="proxima()">Próxima ➡</button>
+  </div>
 
 </div>
 
 <script>
-
 let atual = 0;
 
 const slider = document.getElementById("slider");
 const slides = document.querySelectorAll(".slide");
 const contador = document.getElementById("contador");
+const total = slides.length;
 
 function atualizar(){
-  slider.style.transform = `translateX(-${atual * 100}%)`;
-  contador.innerHTML = `Dica ${atual + 1} de ${slides.length}`;
+  slider.style.transform = "translateX(-" + (atual * 100) + "%)";
+  contador.textContent = "Dica " + (atual + 1) + " de " + total;
 }
 
 function proxima(){
-  if(atual < slides.length - 1){
+  if(atual < total - 1){
     atual++;
     atualizar();
   }
@@ -543,18 +411,17 @@ function voltar(){
 
 const sumario = document.getElementById("sumario");
 
-for(let i = 0; i < slides.length; i++){
-  const btn = document.createElement("button");
-  btn.innerText = i + 1;
-  btn.onclick = () => {
+for(let i = 0; i < total; i++){
+  const botao = document.createElement("button");
+  botao.textContent = i + 1;
+  botao.addEventListener("click", function(){
     atual = i;
     atualizar();
-  };
-  sumario.appendChild(btn);
+  });
+  sumario.appendChild(botao);
 }
 
 atualizar();
-
 </script>
 
 </body>
